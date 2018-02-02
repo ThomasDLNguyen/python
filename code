@@ -1,0 +1,11 @@
+# python
+Here is a repository full of my Python codes that I did in school.
+#1) Define a function hyp(leg1, leg2) that returns the length of a hypotenuse of a right triangle.
+def hyp(leg1, leg2):
+  return (leg1**2+leg2**2)**0.5
+#2) Define a function mean(a,b,c) that returns the mean of three numbers.
+def mean(a,b,c):
+  return (a+b+c)/3
+#3) Define a function perimeter(base, height) that returns the perimeter of a rectangle with side lengths base and height.
+def perimeter(base,height):
+  return (base*2)+(height*2)
