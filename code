@@ -1,11 +1,355 @@
-# python
+'''python
 Here is a repository full of my Python codes that I did in school.
+'''
+
 #1) Define a function hyp(leg1, leg2) that returns the length of a hypotenuse of a right triangle.
 def hyp(leg1, leg2):
   return (leg1**2+leg2**2)**0.5
+  
 #2) Define a function mean(a,b,c) that returns the mean of three numbers.
 def mean(a,b,c):
   return (a+b+c)/3
+  
 #3) Define a function perimeter(base, height) that returns the perimeter of a rectangle with side lengths base and height.
 def perimeter(base,height):
   return (base*2)+(height*2)
+
+#4) Define a function called switch(word1,word2) that will print the two words in reverse order with a space in between.
+def switch(word1,word2):
+  print(word2,word1)
+
+#5) Define a function called distance(x1,y1,x2,y2) that will calculate the distance between the two points (x1,y1) and (x2,y2) and return that value.
+def distance(x1,y1,x2,y2):
+  return((x1-x2)**2+(y1-y2)**2)**.5
+
+#6) Define a function called sumCube(a,b) that will calculate the cube of the sum of the two inputs and return that value.
+def sumCube(a,b):
+  return((a+b)**3)
+
+#7) Define a function called quadratic(a,b,c) that will take the coefficients of a quadratic equation (ax^2 + bx + c = 0) and calculate the two roots using the quadratic formula and print them.  (Assume that the discriminant is always positive so there will always be two solutions)
+def quadratic(a,b,c):
+  print((((-1)*b)+(b**2-(4*a*c))**.5)/(2*a))
+  print((((-1)*b)-(b**2-(4*a*c))**.5)/(2*a))
+
+#8) Define a function called lotsOfN(n) that will compute the following expression for the input value, n:
+def lotsOfN(n):
+  return(n+11*n+111*n)
+  
+#9) Define a function called sum(x,y,z) that will calculate and return the sum of three given numbers. If the three values are equal, then return thrice of their sum.
+def sum(x,y,z):
+  sum = x + y + z
+  if x == y ==z:
+    sum = sum*3
+  return sum
+
+#10) Define a function called equal5(a,b) that will return true if the two given integer values are equal or their sum or difference is 5.
+def equal5(a,b):
+  if(a == b): 
+    return True
+  if(a+b == 5 or a-b == 5 or a-b == -5):
+    return True
+  else:
+    return False
+
+#11) Define a function called maxOf3(x,y,z) that will return the largest value of the 3 numbers.
+def maxOf3(x,y,z):
+  if (x>y and x>z):
+    return (x)
+  if (z>y and z>y):
+    return (z)
+  if (y>x and y>z):
+    return (y)
+
+#12) Define a function called gen(year) that will return what generation the inputted year belongs to.
+Use the following time ranges to help create your function. Spell the generations exactly how you see it below without the year ranges.
+def gen(year):
+ if (year>=1925 and year<=1945):
+  return "Silent Generation"
+ if (year>=1946 and year<=1964):
+  return "Baby Boomer"
+ if (year>=1965 and year<=1979):
+  return "Gen X"
+ if (year>=1980 and year<=1994):
+  return "Millenial (Gen Y)"
+ if (year>=1995 and year<=2012):
+  return "iGen (Gen Z)"
+ if (year>=2013 and year<=2025):
+  return "Gen Alpha"
+
+#13) Define a function called sum(x,y,z) that will calculate and return the sum of three given numbers. If the three values are equal, then return thrice of their sum.
+def sum(x,y,z):
+  sum = x + y + z
+  if x == y ==z:
+    sum = sum*3
+  return sum
+
+#14) Define a function called equal5(a,b) that will return true if the two given integer values are equal or their sum or difference is 5.
+def equal5(a,b):
+  if(a == b): 
+    return True
+  if(a+b == 5 or a-b == 5 or a-b == -5):
+    return True
+  else:
+    return False
+
+#15) Define a function called maxOf3(x,y,z) that will return the largest value of the 3 numbers.
+def maxOf3(x,y,z):
+  if (x>y and x>z):
+    return (x)
+  if (z>y and z>y):
+    return (z)
+  if (y>x and y>z):
+    return (y)
+
+#16) Define a function called gen(year) that will return what generation the inputted year belongs to.
+Use the following time ranges to help create your function. Spell the generations exactly how you see it below without the year ranges.
+def gen(year):
+ if (year>=1925 and year<=1945):
+  return "Silent Generation"
+ if (year>=1946 and year<=1964):
+  return "Baby Boomer"
+ if (year>=1965 and year<=1979):
+  return "Gen X"
+ if (year>=1980 and year<=1994):
+  return "Millenial (Gen Y)"
+ if (year>=1995 and year<=2012):
+  return "iGen (Gen Z)"
+ if (year>=2013 and year<=2025):
+  return "Gen Alpha"
+
+'''
+17)Create a program that prompts the user to input an amount of pennies.
+If the user inputs a negative integer, print an Error message.
+If the user inputs 0, print a message that states no amount to be exchanged.
+Otherwise, using that input value, compute the equivalent amount in terms of dollar bills, quarters, dimes, nickels, and pennies.
+
+Your program must include %(mod) in your calculations, human-friendly variable names, and conditional statements.
+Some sample runs are provided below.
+'''
+p = input("How many pennies do you have?")
+p = int(p)
+if(p>0):
+    print("You can exchange those pennies for:")
+    db = (p - p%100)/100
+    db = int(db)
+    db = str(db)
+    print( db + " dollar bills")
+    qrt = (p%100)//25
+    qrt = str(qrt)
+    print( qrt + " quarters")
+    qrt = int(qrt)
+    di = (p%100 - (25*qrt))//10
+    di = str(di)
+    print( di + " dimes")
+    di = int(di)
+    nkl = (p%100 - (25*qrt) - (10*di))//5
+    nkl = str(nkl)
+    print(nkl + " nickels")
+    nkl = int(nkl)
+    pen = (p%100 - (25*qrt) - (10*di) - (5*nkl))
+    pen = str(pen)
+    print(pen + " pennies")
+if(p == 0):
+    print("No money to be exchanged.")
+if(p<0):
+    print("Error: Invalid input.")
+
+'''
+18)A social media site offers a contest to write a humorous short paragraph. A constraint on the creative format: the entry must include a question, a quote, a compound sentence, and an exclamation. These would contain the characters ? " ,  and !, respectively.      
+Create a function how_eligible(essay) that returns 0 to 4, equal to the number of these four characters that the essay included. 
+'''
+def how_eligible(essay):
+  score=0
+  if "!" in essay:
+    score = score + 1
+  if "," in essay:
+    score= score + 1
+  if '"' in essay:
+    score = score + 1
+  if "?"  in essay:
+    score =score + 1
+  return(score)
+
+#19) mult4() function: Using a while loop, print the numbers that are divisible by 4 and not divisible by 8 starting from 4 to 204, inclusive. Each number should be on its own line.
+def mult4():
+  num1 = 4
+  num2 = 204
+  while(num1<=num2):
+    print(num1)
+    num1+=8
+
+#20) aveLoop() function: Print a prompt to ask the user to input some values. Using a while loop, allow the user to enter in numbers. When they enter "stop", the loop should stop and the average should be print.
+def aveLoop():
+  ave=0
+  L=0
+  print("Input some values and enter 'stop' to find the average.")
+  x=input()
+  while(x!="stop"):
+    L+=1
+    ave += float(x)
+    x = input()
+  print(ave/float(L))
+
+#21) hiLo() function: Print a prompt to ask the user to pick a number between 1 and 20. Using a while loop, allow the user to enter in numbers. After they enter a number, check if their guess is too high or too low and print out feedback for them.  Stop the loop once they guess the correct number. Print out the final number and how many times it took the user to guess the correct number.
+def hiLo():
+  num = random.randint(1,10)
+  print ("Pick a number between 1 and 20")
+  x = input()
+  L = 0
+  while(x!=num):
+    if (int(x)<num):
+     print ("Too low!")
+    if (int(x)>num):
+     print ("Too high!")
+  while(x == num):
+     print ("You're right! The number was" + num)
+  L+=1
+  print("You took" +str(L) + "tries")
+
+#22) Write a num57() function with a while loop that will print out numbers that are divisible by 7 and a multiple of 5 between 1000 and 2000, inclusive.
+def num57():
+  num1=1000
+  while(num1<=2000):
+    if(num1%7==0 and num1%5==0):
+      print(num1)
+    num1+=1
+
+#23) Write an evenOdd() function that will allow the user to enter as many whole numbers as they want.  When they enter "stop", print out the count of even numbers and odd numbers entered. Assume the user will always enter positive whole numbers.
+def evenOdd():
+  print("Enter numbers. Enter'stop' to stop.")
+  x = input()
+  y = 0
+  z = 0
+  while( x != "stop"):
+    if((int(x)%2) == 0):
+      y+=1
+      x = input()
+    if((int(x)%2-1) == 0):
+      z+=1
+      x = input()
+  print("You entered " + str(y) + " even numbers and " + str(z) + " odd numbers.")
+
+#24) Write a checkVowel(a) function that takes in 1 str parameter and it will print out whether that letter is a vowel or consonant.  If the str input is more than 1 letter, print out an Error message. Assume the user will always enter a letter (no numbers or special characters).
+def checkVowel(a):
+  if(len(a) == 1):
+    if(a == "a" or a == "e" or a == "i" or a == "o" or a == "u" or a == "A" or a == "E" or a =="I" or a == "O" or a == "U"):
+      print("Vowel")
+    else:
+      print("Consonant")
+  if(len(a) != 1):
+    print("Invalid Length")
+
+#25) Write a validTri() function that will allow the user to enter the lengths of the 3 sides of a triangle.  Then the program will print out whether or not those sides make a valid triangle.
+def validTri(x,y,z):
+  x=input("Enter length of side 1")
+  y=input("enter length of side 2")
+  z=input("Enter length of side 3")
+  if(int(x)+int(y)>int(z)):
+    print ("Valid Triangle")
+  if(int(x)+int(z)>int(y)):
+    print ("Valid Triangle")
+  if(int(z)+int(y)>int(y)):
+    print ("Valid Triangle")
+  else:
+    print ("invalid Triangle")
+
+#26) Write a zodiac(year) function that will print out what sign in the Chinese Zodiac you were born in.
+def zodiac(year):
+  year = int(year)
+  if((year%12) == 0):
+    print("Monkey")
+  if((year%12) == 1):
+    print("Rooster")
+  if((year%12) == 2):
+    print("Dog")
+  if((year%12) == 3):
+    print("Pig")
+  if((year%12) == 4):
+    print("Rat")
+  if((year%12) == 5):
+    print("Ox")
+  if((year%12) == 6):
+    print("Tiger")
+  if((year%12) == 7):
+    print("Rabbit")
+  if((year%12) == 8):
+    print("Dragon")
+  if((year%12) == 9):
+    print("Snake")
+  if((year%12) == 10):
+    print("Horse")
+  if((year%12) == 11):
+    print("Goat")
+
+#27) Write a function called factorial(x) where it will return the factorial of x.
+def factorial(x):
+  total = 1
+  if (x>0):
+      for i in range(1,x+1):
+        total = total*i
+      return(total)
+  if(x==0):
+      return 1
+  if (x<0):
+      return ("Error")
+
+#28) Write a function called sumSquares(x) where it will return the sum of the squares from x-square to 0-square.
+def sumSquares(x):
+    total=0
+    for i in range(x+1):
+        total = total + i**2
+    for i in range(x,0):
+        total = total + i**2
+    return total
+
+#28) Write a function called repeatX(word,x) where it will return a new String with the word repeated x-number of times.
+def repeatX(word, x):
+    word = str(word)
+    x= int(x)
+    for x in range(x, x+1):
+        word = word*x
+    return word
+
+#29) Write a function called every3rd(word) where it will return a new String with every 3rd character in the original word.
+def every3rd(word):
+    i = len(word)
+    decode = 0
+    for i in range(3):
+        decode = word[i::i+1]
+    return(decode)
+
+#30) Write a function called averageList(li) where the input parameter is a list or tuple.  The function should return the average of the values listed in the list or tuple.
+def averageList(li):
+    total = 0
+    denom = 0
+    for i in li:
+        total += i
+        denom += 1
+    return (total / denom)
+
+#31) Write a function called findMax(li) where the input parameter is a list or tuple.  The function should return the largest value in the list or tuple.
+def findMax(li):
+  for item in li:
+    return max(li)
+
+#32) Write a function called findMin(li) where the input parameter is a list or tuple.  The function should return the smallest value in the list or tuple.
+def findMin(li):
+  for item in li:
+    return min(li)
+
+#33) Write a function called longWords(li) where the input parameter is a list or tuple.  The function should return how many words have 4 or more characters.
+def longWords(li):
+    total = 0
+    for i in li:
+        if len(i) >= 4:
+            total += 1
+    return total
+
+#34) Write a function called allOdd(li) where the input parameter is a list or tuple. The function should  return True if all numbers are odd. Otherwise False.
+def allOdd(li):
+  bool= True
+  for i in li:
+    if (i % 2 == 0):
+      return False
+  return bool
+
